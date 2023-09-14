@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "PinkAndCrimson";
+    src: local("PinkAndCrimson"),
+        url("./fonts/PinkAndCrimson.otf") format("woff");
+}
+
+
+.screenContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: #000000;
+}
+
+.screenContainer .screenLeft {
+    width: 40%;
+    position: relative;
+}
+
+.screenContainer .screenMiddle {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2rem;
+}
+
+.screenContainer .helmetIcon {
+    width: 140px;
+    height: 120px;
+    object-fit: contain;
+    margin-left: -25px;
+    margin-bottom: 18px;
+}
+
+.screenContainer .websiteIcon {
+    width: 200px;
+    height: 98px;
+    object-fit: contain;
+}
+
+.screenContainer .screenMiddle .remainingTime {
+    width: 500px;
+    background-color: black;
+    padding: 0 50px;
+    border-radius: 140px;
+    padding-bottom: 25px;
+
+    position: relative;
+    right: 320px;
+
+    margin: 1rem 0;
+}
+
+.screenContainer .screenMiddle .remainingTime .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: red;
+}
+
+.screenContainer .screenMiddle .remainingTime .row .thintext {
+    font-family: 'Poppins', sans-serif;
+    color: #AAAAAA;
+    padding-top: 12px;
+    padding-bottom: 5px;
+    letter-spacing: 1px;
+
+}
+
+.screenContainer .screenMiddle .remainingTime .row .col p {
+    font-family: "PinkAndCrimson";
+}
+
+.screenContainer .screenMiddle .remainingTime .row .col .numbers {
+    font-size: 62px;
+    color: #FFFFFF;
+    letter-spacing: 2px;
+}
+
+
+
+.screenContainer .screenMiddle .remainingTime .row:nth-child(1) {
+    display: flex;
+    justify-content: center;
+}
+
+
+.screenContainer .screenMiddle .remainingTime .row .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: red;
+}
+
+.screenContainer .screenMiddle .remainingTime .row .col p:nth-child(2) {
+    letter-spacing: 1px;
+}
+
+
+
+.screenContainer .screenMiddle .buttonAndIcons {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.screenContainer .screenMiddle .buttonAndIcons img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.screenContainer .screenMiddle .buttonAndIcons img:hover {
+    transform: scale(1.2);
+}
+
+.screenContainer .screenMiddle .buttonAndIcons img:nth-child(2) {
+    margin: 0 2rem;
+}
+
+
+
+.screenContainer .screenMiddle .gamenighttext {
+    font-family: "PinkAndCrimson";
+    color: #FF0000;
+    font-size: 38px;
+    margin: 14px 0;
+}
+
+.screenContainer .screenMiddle .dateandtime {
+    font-family: "PinkAndCrimson";
+    font-size: 30px;
+    color: white;
+}
+
+.screenContainer .screenMiddle .svg-clip-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 40px;
+    margin-top: 7px;
+    background-color: red;
+    clip-path: polygon(100% 0, 0 5.625%, 0 90%, 96.948% 100%, 100% 0);
+    color: white;
+
+    text-align: center;
+    font-size: 22px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+
+    font-family: "PinkAndCrimson";
+
+}
+
+.screenContainer .screenMiddle .svg-clip-1:hover {
+    transform: scale(1.1);
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+}
+
+
+
+.screenContainer .screenLeft img {
+    width: 100%;
+    height: 80%;
+    object-fit: contain;
+    position: absolute;
+    top: -45px;
+    left: 0;
+}
+
+.screenContainer .screenRight {
+    width: 25%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screenContainer .screenRight .toprightCornerImg {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.screenContainer .screenRight .bottomrightCornerImg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.screenContainer .screenRight .timeZoneinnerContainer {
+    width: 100%;
+    margin-top: -8rem;
+}
+
+.screenContainer .screenRight .timezonesContainer {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    color: #AAAAAA;
+    letter-spacing: 2px;
+    margin: 1rem 0;
+
+}
+
+.screenContainer .screenRight .countryTimeZone {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+    color: white;
+    margin: 10px 0;
+
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    cursor: pointer;
+}
+
+.screenContainer .screenRight .countryTimeZone .timezoneleft {
+    display: flex;
+}
+
+.screenContainer .screenRight .countryTimeZone .time {
+    margin-left: 1rem;
+    text-align: left;
+}
+
+.screenContainer .screenRight .countryTimeZone .time p:nth-child(1) {
+    font-family: "PinkAndCrimson";
+    color: #FF0000;
+    font-size: 26px;
+
+}
+
+.screenContainer .screenRight .countryTimeZone .time p:nth-child(2) {
+    font-family: "PinkAndCrimson";
+    color: white;
+    font-size: 18px;
+}
+
+.screenContainer .screenRight .countryTimeZone .date {
+    font-family: "PinkAndCrimson";
+    color: white;
+    font-size: 28px;
+}
+
+/* .screenContainer .screenRight .countryTimeZone .timeZoneinnerContainer {
+    border: 2px solid yellow;
+} */
+
+.screenContainer .screenRight .countryTimeZone img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
