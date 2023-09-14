@@ -81,6 +81,18 @@
                 </div>
                 <div class="countryTimeZone">
                     <div class="timezoneleft">
+                        <img src="./assets/UKFlag.png" alt="flag_image" />
+                        <div class="time">
+                            <p>BST</p>
+                            <p>GMT+1</p>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <p id="bstTime">11 AM</p>
+                    </div>
+                </div>
+                <div class="countryTimeZone">
+                    <div class="timezoneleft">
                         <img src="./assets/IndiaFlag.png" alt="flag_image" />
                         <div class="time">
                             <p>IST</p>
@@ -157,6 +169,7 @@
 
         const PSTTime = convertToTimeZone(new Date(date), 'America/New_York');
         const ESTTime = convertToTimeZone(new Date(date), "America/New_York")
+        const BSTTime = convertToTimeZone(new Date(date), "Europe/London")
         const ISTTime = convertToTimeZone(new Date(date), 'Asia/Kolkata');
         const BRTTime = convertToTimeZone(new Date(date), 'America/Sao_Paulo');
         const CSTTime = convertToTimeZone(new Date(date), 'Asia/Shanghai');
@@ -164,6 +177,7 @@
         document.getElementById('pstTime').textContent = new Date(PSTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' })
         document.getElementById('estTime').textContent = new Date(ESTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' })
         document.getElementById('istTime').textContent = new Date(ISTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' })
+        document.getElementById('bstTime').textContent = new Date(BSTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' })
         document.getElementById('brtTime').textContent = new Date(BRTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' })
         document.getElementById('cstTime').textContent = new Date(CSTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' })
 
