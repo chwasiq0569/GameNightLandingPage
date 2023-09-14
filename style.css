@@ -300,6 +300,7 @@
         /* margin-top: 5rem; */
         position: absolute;
         padding: 0 1rem;
+        padding-top: 1rem;
     }
 
     .screenContainer .screenMiddle .buttonAndIcons {
@@ -314,7 +315,7 @@
     }
 
     .screenContainer .screenRight {
-        margin-top: 250px;
+        margin-top: 280px;
         padding-bottom: 10rem;
     }
 
@@ -338,12 +339,16 @@
     }
 
     .screenContainer .screenRight {
-        margin-top: 340px;
+        margin-top: 360px;
     }
 }
 
 @media only screen and (max-width: 375px) {
     .screenContainer .screenLeft img {
         height: 350px;
+    }
+
+    .screenContainer .screenRight {
+        margin-top: 410px;
     }
 }
