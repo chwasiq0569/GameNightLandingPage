@@ -19,25 +19,25 @@
             <img class="websiteIcon" src="./assets/WorldWar0x.png" alt="helmetImage" />
             <p class="gamenighttext">GAME NIGHT</p>
             <p class="dateandtime">SEPT 14 at 3 PM UTC</p>
-            <div class="remainingTime">
+            <div id="clockdiv" class="remainingTime">
                 <div class="row">
                     <p class="thintext">STARTS IN</p>
                 </div>
-                <div class="row">
+                <div id="clockdiv" class="row">
                     <div class="col">
-                        <p class="numbers">5</p>
+                        <p class="numbers days">5</p>
                         <p>DAYS</p>
                     </div>
                     <div class="col">
-                        <p class="numbers">8</p>
+                        <p class="numbers hours">8</p>
                         <p>HOURS</p>
                     </div>
                     <div class="col">
-                        <p class="numbers">14</p>
+                        <p class="numbers minutes">14</p>
                         <p>MINUTES</p>
                     </div>
                     <div class="col">
-                        <p class="numbers">54</p>
+                        <p class="numbers seconds">54</p>
                         <p>SECONDS</p>
                     </div>
                 </div>
@@ -64,60 +64,119 @@
                         </div>
                     </div>
                     <div class="date">
-                        <p>11 AM</p>
+                        <p id="pstTime">11 AM</p>
                     </div>
                 </div>
                 <div class="countryTimeZone">
                     <div class="timezoneleft">
                         <img src="./assets/USFlag.png" alt="flag_image" />
                         <div class="time">
-                            <p>PST</p>
-                            <p>UTC-7</p>
+                            <p>EST</p>
+                            <p>UTC-5</p>
                         </div>
                     </div>
                     <div class="date">
-                        <p>11 AM</p>
+                        <p id="estTime">11 AM</p>
                     </div>
                 </div>
                 <div class="countryTimeZone">
                     <div class="timezoneleft">
-                        <img src="./assets/USFlag.png" alt="flag_image" />
+                        <img src="./assets/IndiaFlag.png" alt="flag_image" />
                         <div class="time">
-                            <p>PST</p>
-                            <p>UTC-7</p>
+                            <p>IST</p>
+                            <p>GMT+5</p>
                         </div>
                     </div>
                     <div class="date">
-                        <p>11 AM</p>
+                        <p id="istTime">11 AM</p>
                     </div>
                 </div>
                 <div class="countryTimeZone">
                     <div class="timezoneleft">
-                        <img src="./assets/USFlag.png" alt="flag_image" />
+                        <img src="./assets/BrazilFlag.png" alt="flag_image" />
                         <div class="time">
-                            <p>PST</p>
-                            <p>UTC-7</p>
+                            <p>BRT</p>
+                            <p>UTC-3</p>
                         </div>
                     </div>
                     <div class="date">
-                        <p>11 AM</p>
+                        <p id="brtTime">6 PM</p>
                     </div>
                 </div>
                 <div class="countryTimeZone">
                     <div class="timezoneleft">
-                        <img src="./assets/USFlag.png" alt="flag_image" />
+                        <img src="./assets/ChinaFlag.png" alt="flag_image" />
                         <div class="time">
-                            <p>PST</p>
-                            <p>UTC-7</p>
+                            <p>CST</p>
+                            <p>UTC+8</p>
                         </div>
                     </div>
-                    <div class="date">
-                        <p>11 AM</p>
+                    <div id="cstTime" class="date">
+                        <p>2 AM</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="./index.js"></script>
+    <script async defer>
+
+        const date = "SEPT 14, 2023 15:00:00 UTC"
+
+        function convertTZ(date, tzString) {
+            const inputDate = typeof date === "string" ? new Date(date) : date;
+            const utcDate = new Date(inputDate.toLocaleString("en-US", { timeZone: "UTC" }));
+            const targetDate = new Date(utcDate.toLocaleString("en-US", { timeZone: tzString }));
+            return targetDate;
+        }
+
+        // let PSTTime = convertTZ(date, "America/Los_Angeles")
+        // let ESTTime = convertTZ(date, "America/New_York")
+        // let ISTTime = convertTZ(date, "-300")
+        // let BRTTime = convertTZ(date, "-180")
+        // let CSTTime = convertTZ(date, "480")
+        // document.getElementById('pstTime').innerText = PSTTime
+        // console.log('PSTTime', PSTTime)
+
+
+
+        function convertToTimeZone(date, targetTimeZone) {
+            const options = {
+                timeZone: targetTimeZone,
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric',
+            };
+
+            return new Intl.DateTimeFormat('en-US', options).format(date);
+        }
+
+        const PSTTime = convertToTimeZone(new Date(date), 'America/New_York');
+        const ESTTime = convertToTimeZone(new Date(date), "America/New_York")
+        const ISTTime = convertToTimeZone(new Date(date), 'Asia/Kolkata');
+        const BRTTime = convertToTimeZone(new Date(date), 'America/Sao_Paulo');
+        const CSTTime = convertToTimeZone(new Date(date), 'Asia/Shanghai');
+
+        document.getElementById('pstTime').textContent = new Date(PSTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' })
+        document.getElementById('estTime').textContent = new Date(ESTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' })
+        document.getElementById('istTime').textContent = new Date(ISTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' })
+        document.getElementById('brtTime').textContent = new Date(BRTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' })
+        document.getElementById('cstTime').textContent = new Date(CSTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' })
+
+        // console.log('WW', new Date(PSTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' }))
+        // let ISTTime = convertTZ(date, "-300")
+        // let BRTTime = convertTZ(date, "-180")
+        // let CSTTime = convertTZ(date, "480")
+
+        // Prepend any date. Use your birthday.
+
+        // const timeString12hr = new Date(date).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' });
+        // console.log('timeString12hr', timeString12hr)
+    </script>
 </body>
 
 </html>
