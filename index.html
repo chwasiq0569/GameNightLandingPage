@@ -11,6 +11,8 @@
 
 <body>
     <div class="screenContainer">
+        <img class="toprightCornerImg" src="./assets/toprightcorner.png" alt="top_right" />
+        <img class="bottomrightCornerImg" src="./assets/bottomrightcorner.png" alt="top_right" />
         <div class="screenLeft">
             <img src="./assets/Intersect.png" alt="coverImage" />
         </div>
@@ -49,8 +51,6 @@
             </div>
         </div>
         <div class="screenRight">
-            <img class="toprightCornerImg" src="./assets/toprightcorner.png" alt="top_right" />
-            <img class="bottomrightCornerImg" src="./assets/bottomrightcorner.png" alt="top_right" />
             <div class="timeZoneinnerContainer">
                 <div class="timezonesContainer">
                     <p>TIMEZONES</p>
@@ -133,25 +133,7 @@
 
     <script src="./index.js"></script>
     <script async defer>
-
-        const date = "SEPT 14, 2023 15:00:00 UTC"
-
-        function convertTZ(date, tzString) {
-            const inputDate = typeof date === "string" ? new Date(date) : date;
-            const utcDate = new Date(inputDate.toLocaleString("en-US", { timeZone: "UTC" }));
-            const targetDate = new Date(utcDate.toLocaleString("en-US", { timeZone: tzString }));
-            return targetDate;
-        }
-
-        // let PSTTime = convertTZ(date, "America/Los_Angeles")
-        // let ESTTime = convertTZ(date, "America/New_York")
-        // let ISTTime = convertTZ(date, "-300")
-        // let BRTTime = convertTZ(date, "-180")
-        // let CSTTime = convertTZ(date, "480")
-        // document.getElementById('pstTime').innerText = PSTTime
-        // console.log('PSTTime', PSTTime)
-
-
+        const date = "SEPT 16, 2023 15:00:00 UTC"
 
         function convertToTimeZone(date, targetTimeZone) {
             const options = {
@@ -181,15 +163,6 @@
         document.getElementById('brtTime').textContent = new Date(BRTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' })
         document.getElementById('cstTime').textContent = new Date(CSTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' })
 
-        // console.log('WW', new Date(PSTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' }))
-        // let ISTTime = convertTZ(date, "-300")
-        // let BRTTime = convertTZ(date, "-180")
-        // let CSTTime = convertTZ(date, "480")
-
-        // Prepend any date. Use your birthday.
-
-        // const timeString12hr = new Date(date).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' });
-        // console.log('timeString12hr', timeString12hr)
     </script>
 </body>
 
