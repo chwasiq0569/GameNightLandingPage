@@ -341,3 +341,9 @@
         margin-top: 340px;
     }
 }
+
+@media only screen and (max-width: 375px) {
+    .screenContainer .screenLeft img {
+        height: 350px;
+    }
+}
