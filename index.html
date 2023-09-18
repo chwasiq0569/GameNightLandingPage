@@ -173,12 +173,12 @@
             return new Intl.DateTimeFormat('en-US', options).format(date);
         }
 
-        const PSTTime = convertToTimeZone(new Date(date), 'America/New_York');
-        const ESTTime = convertToTimeZone(new Date(date), "America/New_York")
-        const BSTTime = convertToTimeZone(new Date(date), "Europe/London")
-        const ISTTime = convertToTimeZone(new Date(date), 'Asia/Kolkata');
-        const BRTTime = convertToTimeZone(new Date(date), 'America/Sao_Paulo');
-        const CSTTime = convertToTimeZone(new Date(date), 'Asia/Shanghai');
+        const PSTTime = convertToTimeZone(date, 'America/New_York');
+        const ESTTime = convertToTimeZone(date, "America/New_York")
+        const BSTTime = convertToTimeZone(date, "Europe/London")
+        const ISTTime = convertToTimeZone(date, 'Asia/Kolkata');
+        const BRTTime = convertToTimeZone(date, 'America/Sao_Paulo');
+        const CSTTime = convertToTimeZone(date, 'Asia/Shanghai');
 
         document.getElementById('pstTime').textContent = new Date(PSTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' })
         document.getElementById('estTime').textContent = new Date(ESTTime).toLocaleTimeString('en-US', { hour12: true, hour: 'numeric' })
