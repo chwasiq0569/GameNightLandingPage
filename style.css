@@ -161,15 +161,17 @@
     background-color: red;
     clip-path: polygon(100% 0, 0 5.625%, 0 90%, 96.948% 100%, 100% 0);
     color: white;
-
+    /* all: unset; */
     text-align: center;
     font-size: 22px;
     font-weight: 100;
     letter-spacing: 1px;
     cursor: pointer;
     transition: 0.5s ease-in-out;
-
+    border: 2px solid red;
     font-family: "PinkAndCrimson";
+
+    text-decoration: none;
 
 }
 
