@@ -21,7 +21,7 @@
             <img class="helmetIcon" src="./assets/HelmetIcon1.png" alt="helmetImage" />
             <img class="websiteIcon" src="./assets/WorldWar0x.png" alt="helmetImage" />
             <p class="gamenighttext">GAME NIGHT</p>
-            <p class="dateandtime">SEPT 14 at 3 PM UTC</p>
+            <p id="dateAndtime" class="dateandtime">SEPT 14 at 3 PM UTC</p>
             <div id="clockdiv" class="remainingTime">
                 <div class="row">
                     <p class="thintext">STARTS IN</p>
@@ -137,7 +137,29 @@
 
     <script src="./index.js"></script>
     <script async defer>
-        const date = "SEPT 16, 2023 15:00:00 UTC"
+
+        const todayDate = new Date();
+        todayDate.setDate(currentDate.getDate() + 1);
+        const date = todayDate;
+
+        function formatDate(date) {
+            const months = [
+                'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN',
+                'JUL', 'AUG', 'SEPT', 'OCT', 'NOV', 'DEC'
+            ];
+
+            const month = months[date.getMonth()];
+            const day = date.getDate();
+            const hours = date.getUTCHours();
+            const period = hours >= 12 ? 'PM' : 'AM';
+
+            // Convert hours to 12-hour format
+            const formattedHours = hours % 12 === 0 ? 12 : hours % 12;
+
+            return `${month} ${day} at ${formattedHours} ${period} UTC`;
+        }
+
+        document.getElementById('dateAndtime').textContent = formatDate(date)
 
         function convertToTimeZone(date, targetTimeZone) {
             const options = {

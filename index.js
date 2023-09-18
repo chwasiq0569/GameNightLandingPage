@@ -42,6 +42,10 @@ function initializeClock(id, endtime) {
     updateClock();
     const timeinterval = setInterval(updateClock, 1000);
 }
+const currentDate = new Date(); // Get the current date
 
-const deadline = new Date("SEPT 16, 2023 15:00:00 UTC");
+// Add 1 day to the current date
+currentDate.setDate(currentDate.getDate() + 1);
+
+const deadline = currentDate;
 initializeClock('clockdiv', deadline);
